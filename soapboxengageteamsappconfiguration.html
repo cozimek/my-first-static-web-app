@@ -1,0 +1,147 @@
+<html>
+	<head>
+		<!-- Microsoft Teams JavaScript API (via CDN) -->
+		<script src="https://statics.teams.cdn.office.net/sdk/v1.9.0/js/MicrosoftTeams.min.js" integrity="sha384-bcRxWKfzRyPxg/waVm3IsOnaH2Inoh5gGIJNOat79+wq22/BZ+mFuSTUmVc7l2el" crossorigin="anonymous"></script>
+	</head>
+	<body background="/bluebg.png">
+		<form style="text-align: center;" class="form-inline" id="form_login">
+		<div>
+			<input style="height: 36px; width: 186px;" type="text" id="urlText" name="urlText" placeholder="https://www.example.org"/>   
+			<label>Soapbox Engage Donations app page URL</label> 
+		</div>  
+ 		<div>
+			<input style="height: 36px; width: 36px;" type="checkbox" placeholder="and check the checkbox" id="okay" name="okay" value="ok" onclick="onClick()"/>	
+			<label id="warning">Please check the box</label> 
+		</div>  
+
+
+<!--
+
+ <input style="height: 36px; width: 36px;" type="button"   name="okay" value="ok" onclick="return onClick();">
+<button name="okay" onclick="onClick()">Click me</button>-->
+  </form>
+  <script type="text/javascript">
+
+    microsoftTeams.initialize();
+ function onClick() {
+        microsoftTeams.settings.setValidityState(true);
+var d = document.getElementById("warning");
+  if (d.style.display === "none") {
+    d.style.display = "block";
+  } else {
+    d.style.display = "none";
+  }
+  var b = document.getElementById("urlText").value;
+if(b=="")
+{
+alert("Please enter URL");
+
+document.getElementById("okay").checked = false; 
+document.getElementById("warning").style.display = "block";
+return;
+}
+  microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
+        var btn = document.getElementsByName("okay");
+	    var x = document.getElementById("urlText").value;
+if (x.indexOf('https') === -1) {
+if (x.indexOf('http') > -1){
+ x = x.replace('http', 'https');
+
+}else
+{
+x = "https://".concat(x);
+
+
+}
+ 
+}
+
+        if (btn[0].checked) {
+            microsoftTeams.settings.setSettings({
+                 entityId: "exampleapp1234",
+                 contentUrl: x,
+                 suggestedDisplayName: "soapboxApplication",
+                 websiteUrl: "https://kuchbhi.taolabs.in/configR.html",
+                 removeUrl: "https://kuchbhi.taolabs.in/configR.html",
+             });
+         }
+         saveEvent.notifySuccess();
+    });
+    }
+function onSub() {
+        microsoftTeams.settings.setValidityState(true);
+alert("DFsf");
+  microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
+        var btn = document.getElementsByName("okay");
+	    var x = document.getElementById("urlText").value;
+alert(x);
+        
+            microsoftTeams.settings.setSettings({
+                 entityId: "soapboxengage1234",
+                 contentUrl: x,
+                 suggestedDisplayName: "Soapbox Engage",
+                 websiteUrl: "https://kuchbhi.taolabs.in/configR.html",
+                 removeUrl: "https://kuchbhi.taolabs.in/configR.html",
+             });
+         
+         saveEvent.notifySuccess();
+    });
+    }
+
+  </script>
+<style>
+
+/*input {
+  display: inline-block;
+  width: 6em;
+  position: relative;
+  top: -3em;
+}
+
+label {
+  display: inline-block;
+  width: 6em;
+  margin-right: .5em;
+  
+  padding-top: 3.5em;
+}?
+
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+*/
+ div
+    {
+    clear: both;
+    float: left;
+padding-top: 0.5em;
+    }
+    input
+    {
+        display:block;
+    }
+    label
+    {
+    float: right;
+    color: white;	
+
+    }
+html,body {
+  height:100%;
+  width:100%;
+  margin:0;
+}
+body {
+  display:flex;
+}
+form {
+  margin:auto;/* nice thing of auto margin if display:flex; it center both horizontal and vertical :) */
+}</style>
+  </body>
+</html>
