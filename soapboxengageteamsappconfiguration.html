@@ -17,10 +17,10 @@
 				<label>Soapbox Engage Donations app page URL</label> 
 			</div>  
  	
- 			<!--- ><div>
+ 			<div>
 				<input style="height: 36px; width: 36px;" type="checkbox" id="okay" name="okay" value="ok" onclick="onClick()"/>	
 				<label id="warning">Please check the box</label> 
-			</div> --->
+			</div>
 	
 		</form>
 	
@@ -45,7 +45,7 @@
 				
 				if(b=="") {
 					alert("Please enter URL");
-					//document.getElementById("okay").checked = false; 
+					document.getElementById("okay").checked = false; 
 					document.getElementById("warning").style.display = "block";
 					return;
 				}
@@ -53,7 +53,7 @@
 				microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
 					
 					microsoftTeams.settings.setValidityState(true);
-					//var btn = document.getElementsByName("okay");
+					var btn = document.getElementsByName("okay");
 					
 					var x = document.getElementById("urlText").value;
 					
@@ -65,7 +65,7 @@
 						}
  					}
  					
- 					//if (btn[0].checked) {
+ 					if (btn[0].checked) {
 						microsoftTeams.settings.setSettings({
 							entityId: "soapboxengage123456789",
 							contentUrl: x,
@@ -73,7 +73,7 @@
 							websiteUrl: "https://mango-flower-04dd94f10.azurestaticapps.net/soapboxengageteamsappconfiguration.html",
 							removeUrl: "https://mango-flower-04dd94f10.azurestaticapps.net/soapboxengageteamsappconfiguration.html",
 						});
-					//}
+					}
 					saveEvent.notifySuccess();
 				});
 			}
@@ -86,7 +86,7 @@
 			
 				microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
 					microsoftTeams.settings.setValidityState(true);
-					//var btn = document.getElementsByName("okay");
+					var btn = document.getElementsByName("okay");
 					var x = document.getElementById("urlText").value;
 					alert(x);
 			
