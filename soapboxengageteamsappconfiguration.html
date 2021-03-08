@@ -27,7 +27,8 @@
 		<script type="text/javascript">
 			
 			microsoftTeams.initialize();
-			
+			microsoftTeams.settings.setValidityState(true);
+
 			function onClick() {
 				
 				microsoftTeams.settings.setValidityState(true);
@@ -51,6 +52,7 @@
 				
 				microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
 					
+					microsoftTeams.settings.setValidityState(true);
 					//var btn = document.getElementsByName("okay");
 					
 					var x = document.getElementById("urlText").value;
@@ -72,7 +74,6 @@
 							removeUrl: "https://mango-flower-04dd94f10.azurestaticapps.net/soapboxengageteamsappconfiguration.html",
 						});
 					//}
-					microsoftTeams.settings.setValidityState(true);
 					saveEvent.notifySuccess();
 				});
 			}
@@ -84,6 +85,7 @@
 				alert("DFsf");
 			
 				microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
+					microsoftTeams.settings.setValidityState(true);
 					//var btn = document.getElementsByName("okay");
 					var x = document.getElementById("urlText").value;
 					alert(x);
