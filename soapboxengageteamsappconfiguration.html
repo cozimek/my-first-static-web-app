@@ -12,15 +12,17 @@
 		<form style="text-align: center;" class="form-inline" id="form_login">
 	
 			<div>
-				<p>Microsoft Teams Embed URL</p>
-				<input style="height: 36px; width: 300px; color: #6264a7;" class="ms-fontSize-20" type="text" id="urlText" name="urlText" placeholder="https://www.example.org"/>   
-				<label>Microsoft Teams Embed URL</label> 
+				<p style="color: #6264a7;" class="ms-fontSize-20">Microsoft Teams Embed URL</p>
+				<div class="ms-TextField">
+					<input style="height: 36px; width: 300px; color: #6264a7;" class="ms-TextField-field" type="text" id="urlText" name="urlText" />   
+					<label>Microsoft Teams Embed URL</label>
+				</div>
 			</div>  
  	
  			<div>
 				<p>Approve URL for Publishing in Teams</p>
 				<input style="height: 36px; width: 36px;" type="checkbox" id="okay" name="okay" value="ok" onclick="onClick()"/>	
-				<label id="warning">Please check the box</label> 
+				<label id="warning">Please check the box</label>
 			</div>
 	
 		</form>
