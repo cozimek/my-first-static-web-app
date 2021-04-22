@@ -4,7 +4,7 @@
 	
 		<!-- Microsoft Teams JavaScript API (via CDN) -->
 		<script src="https://statics.teams.cdn.office.net/sdk/v1.9.0/js/MicrosoftTeams.min.js" integrity="sha384-bcRxWKfzRyPxg/waVm3IsOnaH2Inoh5gGIJNOat79+wq22/BZ+mFuSTUmVc7l2el" crossorigin="anonymous"></script>
-	
+		<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />
 	</head>
 	
 	<body>
@@ -12,12 +12,13 @@
 		<form style="text-align: center;" class="form-inline" id="form_login">
 	
 			<div>
-				<p>Soapbox Engage Donations app page URL</p>
-				<input style="height: 36px; width: 300px;" type="text" id="urlText" name="urlText" placeholder="https://www.example.org"/>   
-				<label>Soapbox Engage Donations app page URL</label> 
+				<p>Microsoft Teams Embed URL</p>
+				<input style="height: 36px; width: 300px; color: #6264a7;" class="ms-fontSize-20" type="text" id="urlText" name="urlText" placeholder="https://www.example.org"/>   
+				<label>Microsoft Teams Embed URL</label> 
 			</div>  
  	
  			<div>
+				<p>Approve URL for Publishing in Teams</p>
 				<input style="height: 36px; width: 36px;" type="checkbox" id="okay" name="okay" value="ok" onclick="onClick()"/>	
 				<label id="warning">Please check the box</label> 
 			</div>
